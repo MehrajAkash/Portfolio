@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mehraj Hossain Akash | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+
+    <!--src link for skill section-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
+
+
 </head>
 
 <body>
@@ -18,8 +23,10 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certification</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
+
             </ul>
             <button id="mode-toggle">🌙</button>
         </nav>
@@ -70,6 +77,10 @@
 
     <section id="skills" class="skills fade-in">
         <h2>Skills</h2>
+
+        <canvas id="myChart" style="width:90%;max-width:600px" style="color: blueviolet;"></canvas>
+
+        <!--
         <div class="skill-bar">
             <p>C++</p>
             <div class="bar"><span style="width:95%"></span></div>
@@ -89,45 +100,57 @@
             <div class="bar"><span style="width:60%"></span></div>
 
         </div>
+        -->
+
+        <section id="profiles" class="profiles fade-in">
+            <h2> Problem Solving <h3>(programming)</h3>
+            </h2>
+            <div class="profiles-list">
+
+                <!-- LeetCode Card -->
+                <a href="https://leetcode.com/u/Mehraj_Akash/" target="_blank" class="profile-link">
+                    <div class="profile-card">
+                        <img src="./images/LeetCode.jpg" alt="LeetCode Logo" class="profile-logo">
+                        <h3>LeetCode</h3>
+                        <p>click here</p>
+                    </div>
+                </a>
+
+                <!-- CodeForces Card -->
+                <a href="https://codeforces.com/profile/Mehraj-Akash" target="_blank" class="profile-link">
+                    <div class="profile-card">
+                        <img src="./images/CodeForces.jpg" alt="LeetCode Logo" class="profile-logo"
+                            style="border-radius: 20%">
+                        <h3>CodeForces</h3>
+                        <p>click here</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
     </section>
 
 
-    <section id="profiles" class="profiles fade-in">
-        <h2>Online Judge Profiles <h3>(programming)</h3>
-        </h2>
-        <div class="profiles-list">
+    <section id="certifications" class="certifications fade-in">
+        <h2>My Certifications</h2>
+        <div class="slider-container">
 
-            <!-- Github Card -->
-            <a href="https://github.com/MehrajAkash" target="_blank" class="profile-link">
-                <div class="profile-card">
-                    <img src="./images/Github.jpg" alt="GitHub Logo" class="profile-logo">
-                    <h3>GitHub</h3>
-                    <p>click here</p>
-                </div>
-            </a>
+            <!-- Previous Button -->
+            <button class="nav-btn prev" onclick="prev()">&#10094;</button>
 
-            <!-- LeetCode Card -->
-            <a href="https://leetcode.com/u/Mehraj_Akash/" target="_blank" class="profile-link">
-                <div class="profile-card">
-                    <img src="./images/LeetCode.jpg" alt="LeetCode Logo" class="profile-logo">
-                    <h3>LeetCode</h3>
-                    <p>click here</p>
-                </div>
-            </a>
+            <!-- Image Display -->
+            <img id="certificateImg" src="./images/Nasa Space apps.jpg" alt="Certificate">
 
-            <!-- CodeForces Card -->
-            <a href="https://codeforces.com/profile/Mehraj-Akash" target="_blank" class="profile-link">
-                <div class="profile-card">
-                    <img src="./images/CodeForces.jpg" alt="LeetCode Logo" class="profile-logo">
-                    <h3>CodeForces</h3>
-                    <p>click here</p>
-                </div>
-            </a>
-
+            <!-- Next Button -->
+            <button class="nav-btn next" onclick="next()">&#10095;</button>
         </div>
+        <br>
+        <p id="caption" class="caption"></p>
     </section>
 
 
+    <!--Project sectoin-->
     <section id="projects" class="projects fade-in">
         <h2>Projects</h2>
         <div class="project-grid">
@@ -176,6 +199,12 @@
         <h2>Connect With Me</h2>
         <div class="social-links">
 
+            <!-- Github Card -->
+            <a href="https://github.com/MehrajAkash" target="_blank" class="social-link github">
+                <img src="./images/Github.jpg" alt="GitHub Logo" style="padding: 11%; border-radius: 10px;">
+
+            </a>
+
             <!-- LinkedIn -->
             <a href="https://www.linkedin.com/in/md-mehraj-hossain-akash-71825a329" target="_blank"
                 class="social-link lnkd">
@@ -184,7 +213,7 @@
 
             <!-- Facebook -->
             <a href="https://www.facebook.com/yourprofile" target="_blank" class="social-link fb">
-                <img src="./images/facebook.png" alt="Facebook">
+                <img src="./images/facebook.png" alt="Facebook" style=" padding:12% 12%; ">
             </a>
 
         </div>
