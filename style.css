@@ -222,6 +222,7 @@ footer {
 }
 
 
+
 /****** Project section ****/
 
 .project-link {
@@ -265,6 +266,7 @@ footer {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
+
 
 
 
@@ -323,6 +325,82 @@ body.dark .profile-card {
 }
 
 
+
+
+/* ===== Certifications Section ===== */
+.certifications {
+    text-align: center;
+    padding: 60px 10%;
+}
+
+.slider-container {
+    position: relative;
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-container img {
+    width: 85%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.8s ease-in-out, transform 0.3s ease;
+}
+
+.slider-container img:hover {
+    transform: scale(1.02);
+}
+
+/* Fade Animations */
+.fade-out {
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 1s ease-in;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s;
+    z-index: 2;
+}
+
+.nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.nav-btn.prev {
+    left: -60px;
+}
+
+.nav-btn.next {
+    right: -60px;
+}
+
+.caption {
+    margin-top: 10px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/** certification end **/
+
+
 /**** Social media Connection *******/
 .connect {
     padding: 60px 10%;
@@ -343,7 +421,6 @@ body.dark .profile-card {
     transition: transform 0.3s, filter 0.3s;
 }
 
-/* Hover effect */
 .social-link:hover img {
     transform: scale(1.2);
     filter: brightness(1.2);
@@ -354,14 +431,8 @@ body.dark .profile-card {
     filter: hue-rotate(200deg) brightness(1.3);
 }
 
-.social-link.tw:hover img {
-    filter: hue-rotate(190deg) brightness(1.3);
-}
-
-.social-link.ig:hover img {
-    filter: hue-rotate(310deg) brightness(1.3);
-}
-
 .social-link.lnkd:hover img {
     filter: hue-rotate(0deg) brightness(1.3);
 }
+
+/**** Social media Connection end **/
