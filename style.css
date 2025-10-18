@@ -325,6 +325,12 @@ body.dark .profile-card {
 }
 
 
+/*** skill section ***/
+#skills #graph {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
 
 
 /* ===== Certifications Section ===== */
@@ -436,3 +442,4 @@ body.dark .profile-card {
 }
 
 /**** Social media Connection end **/
+
