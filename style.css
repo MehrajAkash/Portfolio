@@ -223,29 +223,6 @@ footer {
 
 
 
-/****** Project section ****/
-
-.project-link {
-    text-decoration: none;
-    /* Remove underline */
-    color: inherit;
-    /* Keep text color */
-    display: block;
-    /* Make the link cover the entire card */
-}
-
-.project-link .project-card {
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project-link .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-
-
 /*** eucational section ***/
 
 .education-link {
@@ -267,7 +244,7 @@ footer {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-
+/*** education section end *********/
 
 
 /******* Online profile lists section *************/
@@ -325,12 +302,14 @@ body.dark .profile-card {
 }
 
 
+
 /*** skill section ***/
 #skills #graph {
     display: flex;
     justify-content: center;
     text-align: center;
 }
+
 
 
 /* ===== Certifications Section ===== */
@@ -407,6 +386,32 @@ body.dark .profile-card {
 /** certification end **/
 
 
+
+/****** Project section ****/
+
+.project-link {
+    text-decoration: none;
+    /* Remove underline */
+    color: inherit;
+    /* Keep text color */
+    display: block;
+    /* Make the link cover the entire card */
+}
+
+.project-link .project-card {
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-link .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/******* project section end *******/
+
+
+
 /**** Social media Connection *******/
 .connect {
     padding: 60px 10%;
@@ -443,3 +448,41 @@ body.dark .profile-card {
 
 /**** Social media Connection end **/
 
+
+
+
+/** Map section start*****/
+#map-section {
+
+    text-align: center;
+    padding: 60px 10%;
+    margin-top: 8%;
+}
+
+#map {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: 14%;
+
+    width: 70%;
+    height: 400px;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #map {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    #map {
+        height: 250px;
+    }
+}
+
+/** Map section end*****/
