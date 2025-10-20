@@ -100,7 +100,6 @@ showCertificate(index);
 // image slider end
 
 
-
 // Contact Form - Send to backend API
 const form = document.getElementById("contactForm");
 const responseMsg = document.getElementById("form-response");
@@ -134,3 +133,140 @@ form.addEventListener("submit", async function (e) {
 });
 
 /// contact form end
+
+
+
+/**** map section */
+// ===== Google Map: Live Tracking with Pulsing Circle =====
+let map, marker, circle;
+
+function initMap() {
+    const defaultLocation = { lat: 23.8103, lng: 90.4125 }; // Dhaka fallback
+
+    // Initialize Map
+    map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 14,
+        center: defaultLocation,
+        mapTypeControl: false,
+        streetViewControl: false,
+    });
+
+    // Create Marker
+    marker = new google.maps.Marker({
+        position: defaultLocation,
+        map: map,
+        title: "You are here 📍",
+        icon: {
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 8,
+            fillColor: "#4285F4",
+            fillOpacity: 1,
+            strokeColor: "white",
+            strokeWeight: 2,
+        },
+    });
+
+    // Create Pulsing Circle
+    circle = new google.maps.Circle({
+        map: map,
+        center: defaultLocation,
+        radius: 100,
+        fillColor: "#4285F4",
+        fillOpacity: 0.2,
+        strokeColor: "#4285F4",
+        strokeOpacity: 0.5,
+        strokeWeight: 1,
+    });
+
+    // Animate the circle radius
+    let growing = true;
+    setInterval(() => {
+        const currentRadius = circle.getRadius();
+        if (growing) {
+            circle.setRadius(currentRadius + 5);
+            if (currentRadius > 150) growing = false;
+        } else {
+            circle.setRadius(currentRadius - 5);
+            if (currentRadius < 80) growing = true;
+        }
+    }, 50);
+
+    // Watch the user's position
+    if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(
+            position => {
+                const userLocation = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
+                };
+
+                // Update marker and circle
+                marker.setPosition(userLocation);
+                circle.setCenter(userLocation);
+
+                // Smoothly move the map center
+                map.panTo(userLocation);
+            },
+            error => {
+                console.warn("Geolocation error:", error);
+                alert("Location access denied or unavailable.");
+            },
+            {
+                enableHighAccuracy: true,
+                maximumAge: 0,
+                timeout: 5000,
+            }
+        );
+    } else {
+        alert("Geolocation is not supported by your browser.");
+    }
+}
+
+
+
+/*** Map basic code 
+// ===== Google Map Section =====
+html->
+<section id="map-section" class="fade-in">
+  <h2>My Current Location</h2>
+  <p>Allow location access to show your position on the map.</p>
+  <div id="map"></div>
+</section>
+
+js->
+function initMap() {
+  const defaultLocation = { lat: 23.8103, lng: 90.4125 }; // Dhaka (fallback)
+
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 13,
+    center: defaultLocation,
+  });
+
+  const marker = new google.maps.Marker({
+    position: defaultLocation,
+    map: map,
+    title: "Default Location",
+  });
+
+  // Get user's real-time location
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        const userLocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+        map.setCenter(userLocation);
+        marker.setPosition(userLocation);
+        marker.setTitle("You are here 📍");
+      },
+      () => {
+        alert("Location access denied. Showing default location.");
+      }
+    );
+  } else {
+    alert("Geolocation not supported by your browser.");
+  }
+}
+
+**/
