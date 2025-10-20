@@ -25,6 +25,7 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#certifications">Certification</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="map-section">Location</a></li>
                 <li><a href="#contact">Contact</a></li>
 
             </ul>
@@ -190,6 +191,15 @@
     </section>
 
 
+
+    <section id="map-section" class="fade-in">
+        <h2>Your Current Location</h2>
+        <p>Allow location access to see your live position on the map.</p>
+        <div id="map"></div>
+    </section>
+
+
+
     <!--Contact Sectoin-->
     <section id="contact" class="contact fade-in">
         <h2>Contact Me</h2>
@@ -235,6 +245,11 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao&libraries=places&callback=initMap">
+        </script>
+
 </body>
 
 </html>
